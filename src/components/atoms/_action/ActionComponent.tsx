@@ -111,7 +111,7 @@ const cvaSecondaryStyles = cva(null, {
 
 type PICK_PROPS_FROM_CVA = 'borderType' | 'intent' | 'size' | 'rounded' | 'shadow' | 'aling';
 
-export interface IAppProps extends React.HTMLAttributes<HTMLButtonElement>, Pick<VariantProps<typeof cvaStyles>, PICK_PROPS_FROM_CVA>  {
+export interface IActionComponentProps extends React.HTMLAttributes<HTMLButtonElement>, Pick<VariantProps<typeof cvaStyles>, PICK_PROPS_FROM_CVA>  {
   as?: 'span' | 'a' | 'button',
   text?: string,
   hover?: boolean,
@@ -136,7 +136,7 @@ export function ActionComponent ({
   aling, 
   secondaryVariantType,
   ...restProps
-}: IAppProps) {
+}: IActionComponentProps) {
   // return <span className='shadow-lg'>dsffds</span>
   return React.createElement(as, {
     ...restProps,
@@ -154,6 +154,6 @@ export function ActionComponent ({
       secondaryIntentType: secondaryVariantType ? intent : null, 
       secondaryColorHover: secondaryVariantType && hover ? intent : null,
       secondaryOutlined: secondaryVariantType && border ? intent : null
-    })), className)
+    }), className))
   }, children ?? text);
 }

@@ -60,9 +60,6 @@ export default {
         focus: '#B2C1D8'
       }
     },
-    fontSize: {
-
-    },
     boxShadow: {
       DEFAULT: '0 4px 8px 0 rgba(248, 245, 255, 1)',
       'sm': '0 2px 4px 0 rgba(248, 245, 255, 1)',
