@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Component library in React, Storybook and Tailwind
 
-Currently, two official plugins are available:
+This is a component library based tailwind, Class Variance Authority, React, Vite and storybook.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Acknowledgements
 
-## Expanding the ESLint configuration
+ - [Class Variance Authority](https://cva.style/docs)
+ - [Tailwind](https://tailwindcss.com/)
+ - [React](https://react.dev/)
+ - [Stoybook](https://storybook.js.org/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+# Hi, I'm Arvind! 👋
+# I have created a component library just to use for my own purpose.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## 🔗 Links
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/arvind-choudhary-a738801a7/)
+
+
+## Installation
+
+Install component-library with npm or yarn
+
+```bash
+  npm install
+  npm run storybook
+  
+  or
+
+  yarn install
+  yarn storybook
+
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+open http://localhost:6006/ to see the components.
