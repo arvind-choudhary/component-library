@@ -4,7 +4,7 @@ import { cn } from '@utils/clxsUtil';
 import type { VariantProps } from 'class-variance-authority';
 import { cva, cx } from 'class-variance-authority';
 
-const cvaStyles = cva('text-center box-border inline-block', {
+const cvaStyles = cva('text-center text-balck box-border inline-block', {
   variants: {
     intent: {
       primary: 'bg-primary text-white',
@@ -78,7 +78,6 @@ const cvaStyles = cva('text-center box-border inline-block', {
     { intent: 'success', pressed: 'success', hover: 'success', outlined: 'success' }
   ],
   defaultVariants: {
-    intent: 'primary',
     size: 'sm'
   }
 });
@@ -120,7 +119,7 @@ export interface IActionComponentProps extends React.HTMLAttributes<HTMLButtonEl
   secondaryVariantType?: boolean;
 }
 
-export function ActionComponent ({ 
+export const ActionComponent = React.forwardRef(({ 
   as = 'button', 
   children, 
   text = 'Button', 
@@ -136,8 +135,7 @@ export function ActionComponent ({
   aling, 
   secondaryVariantType,
   ...restProps
-}: IActionComponentProps) {
-  // return <span className='shadow-lg'>dsffds</span>
+}: IActionComponentProps, ref) => {
   return React.createElement(as, {
     ...restProps,
     className: cn(cx(cvaStyles({ 
@@ -154,6 +152,7 @@ export function ActionComponent ({
       secondaryIntentType: secondaryVariantType ? intent : null, 
       secondaryColorHover: secondaryVariantType && hover ? intent : null,
       secondaryOutlined: secondaryVariantType && border ? intent : null
-    }), className))
+    }), className)),
+    ref
   }, children ?? text);
-}
+})
