@@ -48,11 +48,16 @@ const ALING_TYPE_OPTIONS = {
 const meta: Meta<typeof ActionComponent> = {
   component: ActionComponent,
   args: {
-    intent: 'primary',
+    as: 'button'
   },
   argTypes: {
+    as: {
+      defaultValue: 'button',
+      options: ['button', 'a', 'span'],
+      control: { type: 'inline-radio' },
+    },
     intent: {
-      defaultValue: 'primary',
+      defaultValue: null,
       options: Object.keys(INTENT_TYPE_OPTIONS),
       control: { type: 'select' }
     },
@@ -105,6 +110,12 @@ const meta: Meta<typeof ActionComponent> = {
 
 export default meta;
 type Story = StoryObj<typeof ActionComponent>;
+
+export const Default: Story = {
+  args: {
+    intent: null
+  }
+};
 
 /**    Primary button hover */
 export const Primary: Story = {};
