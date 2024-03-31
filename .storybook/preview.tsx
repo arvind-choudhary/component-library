@@ -1,5 +1,10 @@
 import type { Preview } from "@storybook/react";
 import '../src/output.css'
+import React from "react";
+
+const DisplayBackground = (Story) => {
+  return <div className="bg-gray-700 fixed inset-0"><Story /></div>
+}
 
 const preview: Preview = {
   parameters: {
@@ -11,6 +16,7 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [DisplayBackground]
 };
 
 export default preview;
