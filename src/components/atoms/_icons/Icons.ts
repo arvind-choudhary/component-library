@@ -1,7 +1,8 @@
 import { cva } from "class-variance-authority";
 import type { VariantProps } from 'class-variance-authority';
+import { ComponentProps } from "react";
 
-export const cvaSvgStyles = cva('', {
+export const cvaSvgStyles = cva('fill-black', {
   variants: {
     fill: {
       primary: 'fill-white',
@@ -9,11 +10,14 @@ export const cvaSvgStyles = cva('', {
       warning: 'fill-white',
       info: 'fill-white',
       success: 'fill-white',
+    },
+    disabled: {
+      true: 'fill-gray-50'
     }
-  }
+  },
 })
 
-export const cvaStrokeStyles = cva('', {
+export const cvaStrokeStyles = cva('fill-black', {
   variants: {
     strokeColor: {
       primary: 'stroke-white',
@@ -40,16 +44,25 @@ export const cvaStrokeStyles = cva('', {
       1: 'stroke-1',
       2: 'stroke-2'
     },
+    disabled: {
+      true: 'fill-gray-50'
+    }
   },
   defaultVariants: {
     strokeWidth: 1
   }
 })
 
-export interface IIconProps extends React.HTMLProps<'svg'>, Pick<VariantProps<typeof cvaStrokeStyles>, 'strokeWidth'> {
-    intent?: 'primary' | 'danger' | 'warning' | 'info' | 'success' | null;
-    width?: number;
-    height?: number;
-    secondaryVariant?: boolean;
-    hover?: boolean;
+
+export interface IIconSvgProps extends ComponentProps<'svg'> {
+  intent?: 'primary' | 'danger' | 'warning' | 'info' | 'success' | null;
+  width?: number;
+  height?: number;
+  secondaryVariant?: boolean;
+  hover?: boolean;
+  disabled?: boolean;
+}
+
+export interface IIconStrokeProps extends IIconSvgProps {
+  strokeWidth?: 1 | 2; 
 }
